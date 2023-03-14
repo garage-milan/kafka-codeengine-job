@@ -1,0 +1,22 @@
+#APP SPECIFIC CUSTOM PROPERTIES
+
+
+#SPRING PROPERTIES
+spring:
+  kafka:
+    bootstrap-servers: ${MESSAGEHUB_BOOTSTRAP_ENDPOINTS}
+    properties:
+      ssl.endpoint.identification.algorithm: HTTPS
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="token" password="${MESSAGEHUB_PASSWORD}";
+    ssl:
+      protocol: TLSv1.2
+      enabled:
+        protocols: TLSv12
+    security:
+      protocol: SASL_SSL
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
