@@ -3,7 +3,9 @@
 # TLDR;
 
 ## Prerequisite
-Create an Event Streams instance 
+- [ ] Create an Event Streams instance with a topic named `my-topic`
+- [ ] Create a Code Engine project
+- [ ] Create a registry secret name `ce-auto-icr-private-global` for `private.icr.io` registry
 
 ## RUN LOCAL
 ```sh
